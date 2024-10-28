@@ -1,17 +1,25 @@
-1. Phân tích kiến trúc
-Đề xuất kiến trúc
-Hệ thống "Payroll System" sẽ được xây dựng theo kiến trúc đa tầng (Multi-Tier). Kiến trúc này chia hệ thống thành các lớp (layer) riêng biệt để dễ dàng quản lý và mở rộng:
-- Presentation Layer (Tầng giao diện): Là tầng giao tiếp với người dùng, nơi hiển thị thông tin và nhận yêu cầu của họ.
-- Business Logic Layer (Tầng xử lý nghiệp vụ): Tầng này xử lý các quy tắc nghiệp vụ của hệ thống, bao gồm việc tính lương, quản lý thông tin nhân viên, thẻ công và các quy trình thanh toán.
-- Data Access Layer (Tầng truy xuất dữ liệu): Là tầng quản lý cơ sở dữ liệu, xử lý các thao tác lưu trữ, truy vấn dữ liệu, và đảm bảo an toàn dữ liệu.
-![Biểu đồ Pakage](https://www.planttext.com/api/plantuml/png/R91B2i8m48RtEKKkq2j85Lq85RhGLUbYJ8SIpADCqaKGJ-R28ta5CmYbrMx_npS_ytw-oX21ucYD643Te4TP4mPq4QBsheA49Ez2okPoRCL3JAdT6BJ342hVQpMBrP1iRjVaLNOzjIoUjKK5r9t0vUvNEzZ1-8GuQJFu7Y9i5GEMPFB6i7U5W0i8YqputruKcvMjOcK-9tyEYn9Tnx_v0000__y30000)
-Giải thích các thành phần
-- UI (PresentationLayer): Giao diện tương tác với người dùng, cho phép nhân viên và quản lý nhập và truy vấn dữ liệu.
-- PaymentProcessor (BusinessLogicLayer): Xử lý các quy tắc và logic tính toán thanh toán cho từng nhân viên.
-- TimecardManager (BusinessLogicLayer): Quản lý thông tin thẻ công của nhân viên.
-- EmployeeManager (BusinessLogicLayer): Quản lý thông tin nhân viên, bao gồm cập nhật và tra cứu dữ liệu.
-- PayrollDatabase (DataAccessLayer): Quản lý lưu trữ và truy xuất dữ liệu thanh toán.
-- EmployeeData (DataAccessLayer): Lưu trữ thông tin về các nhân viên và truy vấn thông tin nhân viên khi cần.
+1.Phân tích kiến trúc:
+
+Đề xuất kiến trúc : Kiến trúc tầng.
+
+Kiến trúc này chia hệ thống thành ba tầng:
+
++) Tầng giao diện người dùng(Presentation Layer)
+
++) Tầng ứng dụng(Application Layer)
+
++) Tầng truy cập dữ liệu(Data Access Layer).
+
+Lý do lựa chọn kiến trúc này: Mỗi tầng thực hiện chức năng độc lập, cho phép thay đổi một tầng mà không ảnh hưởng đến các tầng khác, đặc biệt hữu ích khi cần bảo trì hoặc nâng cấp hệ thống.Các tầng có thể dễ dàng mở rộng hoặc điều chỉnh để đáp ứng các yêu cầu mới mà không làm thay đổi toàn bộ hệ thống, được tách biệt hỗ trợ kiểm thử đơn vị và kiểm thử tích hợp tốt hơn, đảm bảo logic nghiệp vụ và xử lý dữ liệu chính xác.Các tầng tách biệt theo chức năng giúp hệ thống dễ bảo trì và kiểm tra lỗi, cải thiện năng suất quản lý và bảo trì hệ thống.
+
+Ý nghĩa từng phần trong kiến trúc:
+
++) Tầng giao diện người dùng(Presentation): Đây là tầng chịu trách nhiệm hiển thị thông tin và cung cấp giao diện để người dùng tương tác với hệ thống.
+
++)Tầng ứng dụng (Application Layer): Tầng trung gian, xử lý các yêu cầu từ tầng giao diện và điều phối nghiệp vụ. Tầng này thực hiện các quy trình logic nghiệp vụ và đảm bảo tính nhất quán của dữ liệu khi có thay đổi.
+
++) Tầng dữ liệu(Data Access Layer): Tầng chịu trách nhiệm truy xuất, lưu trữ, và quản lý dữ liệu của hệ thống, đảm bảo tính toàn vẹn và nhất quán của dữ liệu.
+ ![Biểu đồ Package cho Kiến trúc Hệ thống](https://www.planttext.com/api/plantuml/png/T91D2W8n34RtFKKlu1La2kD2SB0BFK1eWnRxHreNWtWo5nx9AzY2oenbkdnDlfVazNXsAGFbgxCiWhh02RaaJEWpP1Fy3aOaVcEyF6KX9RvnqOOHyRYTm05ywQJ2xkoN8sAqHYt4I1WfM2ifA4mfqFpB5V-0-HpqX1-CGmMaFxAfgeSCGjMavO5xiM_zS_WrL5hIsqEirirMh5cp5FtDmphqkfxu3G00__y30000)
 2. Cơ chế phân tích
 - Cơ chế quản lý người dùng: Đảm bảo quyền truy cập hợp lệ cho từng vai trò (nhân viên, quản lý).
 - Cơ chế tính toán lương: Tự động tính toán lương dựa trên thông tin thẻ công và các quy tắc tính lương.
@@ -48,4 +56,4 @@ Giải thích các thành phần
 - PaymentProcessor: Xử lý tính toán thanh toán.
 - TimecardManager: Quản lý thẻ công.
 Hệ thống sẽ có kiến trúc đa tầng, hỗ trợ bảo trì và mở rộng dễ dàng. Các cơ chế đã được phân tích sẽ đảm bảo hiệu quả xử lý và bảo mật trong toàn bộ hệ thống.
-
+![Biểu đồ Lớp Hợp Nhất cho cả hai ca sử dụng "Select Payment" và "Maintain Timecard](https://www.planttext.com/api/plantuml/png/V5DBReCm4Drp2Y_RHI_0eig2IiqYKgIc1vYOIOfaREGnaQAg9-kYH-eLEeCn42Sf4iZCp7jlVlxz_bbH01_wrXJQ095w9_Jgir3oz7nULwLw2xwnnsWZDAZ35iujsh31yE7gXyVeQg6nWTzTqw86B_QlOgHbW7V6RBtJIEHcYQw6W3VfD1ZTc-WLR4Ot0n9NE_pjpXrUfWnQkzw6jJsuh1OuuQGvSQVqDs3XY5ccYze6wmbCazclY1A3n9MgukyeBvsNe788ZKQqTMuABe1vTRqdHhj-Rt1E_vzUin3iWJ39U-JIyOGlRMVS6L7ygGoX6djQ8S_GKF8aL1BAKPcTanWswEdvUkIbB1If0nz7tnIRztmHEdKn-YJ5ueewoYrMekHjb70gSkg5ciWCKwLxZ1TzB7bYpdDQNPHITMpLBOcxs92q4tZ54vVhzmS00F__0m00)
