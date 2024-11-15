@@ -20,3 +20,18 @@ Một số hệ thống con: BankSystem, PrintService, ProjectManagementDatabase
 | **IProjectManagementDatabase**   | IProjectManagementDatabase (interface) |
 | **ProjectManagementDatabase**    | ProjectManagementDatabase (subsystem proxy) |
 | **ProjectInfo**                  | ProjectInfo (entity)                   |
+# Mapping Design Element to Owning Package
+
+| Design Element                | Owning Package                  |
+|-------------------------------|----------------------------------|
+| **PayrollController**          | payroll.controller               |
+| **IBankSystem**                | payroll.bank.interface           |
+| **BankSystem**                 | payroll.bank.subsystem           |
+| **EmployeePayment**            | payroll.entity                   |
+| **IPrintService**              | payroll.print.interface          |
+| **PrintService**               | payroll.print.subsystem          |
+| **IProjectManagementDatabase** | payroll.project.interface        |
+| **ProjectManagementDatabase**  | payroll.project.subsystem        |
+| **ProjectInfo**                | payroll.entity                   |
+
+# Architectural Layers and Dependencies
