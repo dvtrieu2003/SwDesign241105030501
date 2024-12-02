@@ -35,3 +35,4 @@ Một số hệ thống con: BankSystem, PrintService, ProjectManagementDatabase
 | **ProjectInfo**                | payroll.entity                   |
 
 # Architectural Layers and Dependencies
+![](https://www.planttext.com/api/plantuml/png/X5J1JW8n4BttAoPUFF43X10GF91W92Wduw6KWMtejhNJ1OdnoppuIVw2xOAukDtrjctVcpTlNhjV7vy3yjpv8bUCjbA3CuJi6iQubXh1PmYA7z0HSBq2ON9hD6fFZ5akjdo3S3LpI66BUsaqJ2Fu2juOmDDYyWoztfdJxyVDaT7U6QNG9Gw7imcCb0phluVl5S6XjKgAkjvDGQ5d8fYQZHJmW6ud1QPaAWKQK5MzCVVyGcYErf3qnXqInIDwoIcbUp-_QzEPQ8yRL_Tr--hHQQwWUJm1zPX9ju9PoFBGOkgSh4DLAb4cBS4I_HvHdx9cPNITJhzvfbsGeLl7XIVOIv-nYs1BQdBAaRSpMmmQLJTj1C6L2l2cJafgDP4kl1Je91AiGXGiNJR1ikZMnkK4e_bY32OiZmDY5xYI-9jnVGurS9bw5meA7OLl229HYoHvr0B_SPOC_pGKm9z3EdBQp3OLCdbUw4Z1euFmvkD5il4YCJP0lOh_Xcy0003__mC0)
